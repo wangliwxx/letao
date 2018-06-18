@@ -20,8 +20,8 @@ $(function () {
           notEmpty: {
             message: "用户名不能为空"
           },
-         callback: {
-            message:"用户名不存在"
+          callback: {
+            message: "用户名不存在"
           }
 
 
@@ -40,16 +40,11 @@ $(function () {
             message: '用户密码长度必须在6到12之间'
           },
           callback: {
-            message:"密码错误"
+            message: "密码错误"
           }
-
-
         }
       }
     }
-
-
-
   });
   //需要给表单注册一个校验成功的事件  success.form.bv
   //阻止表单跳转，因为要使用ajax进行表单的提交，判断用户名和密码是否正确
@@ -79,12 +74,10 @@ $(function () {
     })
   });
   //点击重置按钮，重置表单，重置样式
-//找到重置按钮
-$("[type='reset']").on("click",function(){
-  //重置样式
-$form.data("bootstrapValidator").resetForm();
-})
-
-
-
+  //找到重置按钮
+  $("[type='reset']").on("click", function () {
+    //重置样式
+    $form.data("bootstrapValidator").resetForm();
+  })
+  
 });
