@@ -104,11 +104,10 @@ $(function () {
 
   //重置功能，重置样式
   $("[type='reset']").on("click", function () {
-
+    
     //重置样式
     $form.data("bootstrapValidator").resetForm();
 
   });
-
 
 });
