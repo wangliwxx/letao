@@ -18,7 +18,7 @@ $(function () {
         pageSize: pageSize
       },
       success: function (info) {
-        console.log(info);
+       // console.log(info);
         //结合模板引擎，把数据渲染出来
         var html = template("tpl", info);
         $("tbody").html(html);
