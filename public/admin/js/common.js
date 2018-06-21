@@ -52,7 +52,7 @@ $(".icon_menu").on("click", function () {
 //5.退出功能
 //显示退出模态框，
 $(".icon_lagout").on("click", function () {
-  $(".modal").modal("show");
+  $("#logoutModal").modal("show");
 })
 //给模态框的确定按钮注册事件，点击确定，解绑所有事件，发送ajax，退出系统到登录页
 $(".btn_logout").on("click", function () {
