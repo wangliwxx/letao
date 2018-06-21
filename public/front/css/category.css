@@ -1,0 +1,58 @@
+/* 中间内容区域 */
+/* 左侧导航区 对应一级分类 */
+.category_left{
+  width: 90px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.category_left li{
+width: 90px;
+height: 50px;
+background-color:pink;
+border-right:1px solid red;
+border-bottom:1px solid red;
+line-height: 50px;
+text-align: center
+}
+.category_left li.now{
+  background-color: #fff;
+  border-right:none;
+}
+.category_left li a{
+  display: block;
+  width:100%;
+  height: 100%;
+}
+/* 右侧对应二级分类 */
+.category_right{
+  position: relative;
+   height: 100%;
+   margin-left:90px;
+   background-color: #fff;
+}
+.category_right li {
+
+ float: left;
+ width: 33.33%;
+ text-align: center;
+ /* line-height: 20px; */
+
+}
+.category_right li a{
+  display: block;
+  width: 100%;
+  height: 100%;
+  
+}
+
+.category_right li img{
+  display: block;
+  width: 62px;
+  height: 62px;
+  margin:0 auto;
+}
+.category_right .tips{
+  padding:10px;
+}
