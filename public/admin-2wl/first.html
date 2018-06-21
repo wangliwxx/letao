@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>商品管理</title>
+  <title>Document</title>
   <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
   <link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.css">
   <link rel="stylesheet" href="lib/nprogress/nprogress.css">
@@ -35,13 +35,13 @@
             <span class="glyphicon glyphicon-list"></span>
             分类管理
           </a>
-          <div class="child">
-            <a href="first.html">一级分类</a>
+          <div class="child" style="display: block">
+            <a href="first.html" class="now">一级分类</a>
             <a href="second.html">二级分类</a>
           </div>
         </li>
-        <li  style="display: block">
-          <a href="product.html"  class="now">
+        <li>
+          <a href="product.html">
             <span class="glyphicon glyphicon-tags"></span>
             商品管理
           </a>
@@ -67,7 +67,10 @@
         <li>
           <a href="#">管理系统</a>
         </li>
-        <li class="active">商品管理</li>
+        <li>
+          <a href="#">分类管理</a>
+        </li>
+        <li class="active">一级分类</li>
       </ol>
 
       <!--内容区域-->
@@ -77,16 +80,13 @@
           <thead>
             <tr>
               <th>序号</th>
-              <th>一级分类名称</th>
-              <th>二级分类名称</th>
-              <th>二级分类LOGO</th>
+              <th>分类名称</th>
             </tr>
           </thead>
           <tbody>
-            <!-- keng 1-->
+            <!-- keng -->
           </tbody>
         </table>
-        <!-- 分页结构 -->
         <div class="text-right">
           <ul id="paginator"></ul>
         </div>
@@ -118,7 +118,7 @@
       </div>
     </div>
   </div>
-  <!-- 二级分类的添加模态框 -->
+  <!-- 一级分类的添加模态框 -->
   <div class="modal fade" tabindex="-1" id="addModal">
     <div class="modal-dialog modal-sm" role="document">
       <div class="modal-content">
@@ -128,48 +128,18 @@
           </button>
           <h4 class="modal-title">添加分类</h4>
         </div>
-
         <form>
-          <div class="modal-body">
-
-            <div class="form-group">
-              <!-- 下面两个input隐藏域，用于给后端发送数据 -->
-              <input type="hidden" name="categoryId">
-              <input type="hidden" name="hot" value="1">
-              <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-                  <span class="dropdown-text">请选择一级分类</span>
-                  <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                  <!-- keng2 -->
-                </ul>
-              </div>
-            </div>
-
-            <!-- 这个结构不能自己写，去bootstrap官网拷贝 -->
-            <div class="form-group">
-              <input type="text" name="brandName" class="form-control" placeholder="请输入二级分类的名称">
-            </div>
-
-            <div class="form-group">
-              <label for="fileupload" class="btn btn-default">上传图片</label>
-              <input type="file" id="fileupload" class="hidden" name="pic1" data-url="/category/addSecondCategoryPic">
-            </div>
-
-            <div class="form-group">
-              <div class="img_box">
-                <img src="images/none.png" width="100" alt="">
-                <input type="hidden" name="brandLogo">
-              </div>
-            </div>
-
+        <div class="modal-body">
+          <!-- 这个结构不能自己写，去bootstrap官网拷贝 -->
+          <div class="form-group">
+            <input type="text" name="categoryName" class="form-control" placeholder="请输入一级分类的名称">
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-            <button type="submit" class="btn btn-primary btn_confirm">添加</button>
-          </div>
-        </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          <button type="submit" class="btn btn-primary btn_confirm">添加</button>
+        </div>
+      </form>
       </div>
     </div>
   </div>
@@ -181,30 +151,18 @@
   <tr>
       <td>{{(page-1)*size+i+1}}</td>
       <td>{{v.categoryName}}</td>
-      <td>{{v.brandName}}</td>
-      <td><img  width="50" height="50" src="{{v.brandLogo}}" alt=""></td>
   </tr>
   {{/each}}
 </script>
-  <!-- 准备模板 -->
-  <script type="text/html" id="tpl2">
-    {{each rows v i}}
-    <li>
-      <a data-id="{{v.id}} "tabindex="-1" href="#">{{v.categoryName}}</a>
-    </li>
-    {{/each}}
-  </script>
 
   <script src="lib/jquery/jquery.js"></script>
-  <script src="lib/jquery-fileupload/jquery.ui.widget.js"></script>
-  <script src="lib/jquery-fileupload/jquery.fileupload.js"></script>
   <script src="lib/bootstrap/js/bootstrap.js"></script>
   <script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
   <script src="lib/nprogress/nprogress.js"></script>
   <script src="lib/bootstrap-paginator/bootstrap-paginator.js"></script>
   <script src="lib/artTemplate/template-web.js"></script>
   <script src="js/common.js"></script>
-  <script src="js/second.js"></script>
+  <script src="js/first.js"></script>
 </body>
 
 </html>
