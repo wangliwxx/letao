@@ -100,3 +100,75 @@ html,body{
 .lt_footer li.now p{
   color:darkorange;
 }
+
+/* 搜索中心的搜索 search和searchList */
+.lt_search{
+  padding:10px;
+  position: relative;
+}
+.lt_search input{
+ height: 34px;
+ line-height: 34px;
+ width: 100%;
+ padding: 0;
+ margin: 0;
+ font-size: 12px;
+ padding-left:10px;
+ border:1px solid #007aff;
+}
+.lt_search button{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius:0 3px 3px 0;
+}
+/* 移动端首页index和商品列表页searchList产品区域 */
+.lt_content .lt_product{
+  padding:10px;
+}
+
+.lt_content .lt_product a{
+  float: left;
+  width: 48%;
+  background-color: #fff;
+  padding:10px;
+  border:1px solid #ccc;
+  text-align: center;
+  margin-bottom:10px;
+}
+/* .lt_product a:nth-child(even){
+ margin-left:4%;???????????
+} */
+.lt_content .lt_product a:nth-child(even) {
+  margin-left: 4%;
+}
+
+.lt_content .lt_product img{
+  display: block;
+  width: 100%;
+}
+
+.lt_product .oldPrice{
+   color:red;
+}
+.lt_product .price{
+  text-decoration: line-through;
+}
+.lt_product .proName {
+  height: 39px;
+}
+.loading{
+  width: 40px;
+  height: 40px;
+  border: 3px solid #069;
+  margin: 100px auto;
+  animation: zhuan 1s infinite;
+}
+@keyframes zhuan{
+  from{
+    transform: rotate(0deg)
+  }
+  to{
+    transform: rotate(360deg)
+  }
+}

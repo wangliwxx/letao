@@ -1,0 +1,19 @@
+/* 中间排序部分 */
+.lt_sort{
+  height: 30px;
+  line-height: 30px;
+  background-color: #eee;
+}
+.lt_sort li{
+  width:25%;
+  float: left;
+  height: 100%;
+  text-align: center;
+  font-size: 12px;
+}
+.lt_sort li a{
+  color:#666;
+}
+.lt_sort li.now a{
+  color:darkorange;
+}
