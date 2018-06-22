@@ -99,4 +99,79 @@ img {
   height: 100%;
   /* background-color: green; */
   position: relative;
+  background-color: #fff;
+}
+
+
+/* 搜索的样式 */
+.lt_search {
+  padding: 10px;
+  position: relative;
+}
+
+.lt_search input {
+  height: 34px;
+  line-height: 34px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #007aff;
+  font-size: 12px;
+  padding-left: 10px;
+}
+
+.lt_search button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border-radius: 0 3px 3px 0;
+}
+
+
+/* 产品的样式 */
+.lt_product {
+  padding: 10px;
+}
+.lt_product a {
+  float: left;
+  width: 48%;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.lt_product a .price {
+  color: red;
+}
+
+.lt_product .proName {
+  height: 39px;
+}
+
+.lt_product a .old_price {
+  text-decoration: line-through;
+}
+
+.lt_product a:nth-child(even) {
+  margin-left: 4%;
+}
+
+
+.loading {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #069;
+  margin: 100px auto;
+  animation: zhuan 1s infinite;
+}
+
+@keyframes zhuan {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

@@ -14,6 +14,7 @@ $(function () {
     }
   });
 
+  
   //点击一级分类，动态渲染二级分类
   $(".category_left").on("click", "li", function(){
     //1. 当前点击的li需要now，其他li不需要
