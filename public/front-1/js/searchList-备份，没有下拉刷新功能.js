@@ -1,6 +1,6 @@
 $(function () {
 
-  
+
 
   var page = 1;//当前页
   var pageSize = 10;//每页显示的条数
@@ -16,7 +16,15 @@ $(function () {
   //1. 给按钮注册点击事件
   //2. 获取到文本框的值
   //3. 重新渲染
-  $(".lt_search button").on("click", function() {
+  $(".lt_search button").on("click", function () {
+
+    //当点击搜索按钮的时候，需要把排序的样式重置
+    //把所有的li的now的类全部清掉
+    //把所有的li下的span的箭头全部向下
+    $(".lt_sort li").removeClass("now")
+    $(".lt_sort span").removeClass("fa-angle-up").addClass("fa-angle-down");
+
+
     key = $(".lt_search input").val();
     render();
   });
@@ -30,17 +38,17 @@ $(function () {
 
   //如果当前的li没有now这个类，让当前的li有now这个类，并且让其他的li没有now这个类,让所有的span的箭头都初始向下
   //如果当前li有now这个类，修改当前li下的span的箭头的类
-  $(".lt_sort li").on("click", function(){
-    
+  $(".lt_sort li[data-type]").on("click", function () {
+
     var $this = $(this);
-    
-    if(!$this.hasClass("now")) {
+
+    if (!$this.hasClass("now")) {
       //没有now这个类
       //1. 让当前的li有now这个类，移除其他li的now
       $(this).addClass("now").siblings().removeClass("now");
       //2. 让所有span下的箭头都向下
       $(".lt_sort li span").addClass("fa-angle-down").removeClass("fa-angle-up");
-    }else {
+    } else {
       $(this).find("span").toggleClass("fa-angle-down").toggleClass("fa-angle-up");
     }
 
@@ -71,19 +79,38 @@ $(function () {
 
 
   function render() {
+    //每次需要重新渲染数据的时候，先把内容替换成loading
+    $(".lt_product").html('<div class="loading"></div>');
     //发送ajax请求，获取搜索到商品数据
+    var obj = {
+      proName: key,
+      page: page,
+      pageSize: pageSize
+    };
+
+    //判断是否需要添加price或者是num参数
+    var $select = $(".lt_sort li.now");
+    if ($select.length > 0) {
+      console.log("需要排序");
+      var type = $select.data("type");
+      var value = $select.find("span").hasClass("fa-angle-down") ? 2 : 1;
+      //给参数增加了一个属性，属性可以能是price，也可以能是num
+      obj[type] = value;
+    } else {
+      console.log("不需要排序");
+    }
+
     $.ajax({
       type: 'get',
       url: '/product/queryProduct',
-      data: {
-        proName: key,
-        page: page,
-        pageSize: pageSize
-      },
+      data: obj,
       success: function (info) {
-        console.log(info);
-        //结合模板引擎渲染出来
-        $(".lt_product").html(template("tpl", info));
+        //console.log(info);
+        setTimeout(function () {
+          //结合模板引擎渲染出来
+          $(".lt_product").html(template("tpl", info));
+        }, 1000);
+
       }
     })
   }

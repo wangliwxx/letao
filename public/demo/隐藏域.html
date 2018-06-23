@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <form action="111.php">
+    <!-- input：表单元素，属性：type -->
+    <!-- text:文本框 -->
+    <!-- password:密码框 -->
+    <!-- radio: 单选框 -->
+    <!-- checkbox: 复选框 -->
+    <!-- range: 滑动条 -->
+    <!-- number: 数字框,移动端使用： 呼出数字键盘 -->
+    <!-- search: 搜索框,移动端使用： 呼出的键盘右下角 搜索 -->
+    <!-- color: 颜色框，选取颜色 -->
+    <!-- reset: 重置框，会把所有的表单元素的值重置为默认值 -->
+    <!-- submit: 提交框，提交表单，页面会跳转到action指定的url上，如果没有指定action，会跳转到当前页 action="" -->
+    <!-- 
+      hidden: hidden是隐藏的，name属性，值也会发送到后台
+      如果使用了text框，用户可以输入，可以修改这个值
+      hidden：希望这个值能够发送到后台，但是不允许用户修改，对于用户来说是透明的
+
+      修改一个用户的信息：
+        id:  input:hidden
+        账号： input:hidden
+        密码： input:password
+        昵称： input:text
+
+    -->
+    <input type="text"  name="username">
+    <input type="hidden" name="id" value="1">
+    <input type="submit" value="提交">
+  </form>
+
+
+  <script>
+    
+  </script>
+</body>
+</html>

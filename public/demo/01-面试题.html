@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    //要求：统计出现次数最多的那个字符以及出现的次数
+    // var str = "adadfdfseffserfefsefseeffffftsdg";
+    // var obj = {};
+    // //判断每个字符在对象是否存在，如果存在，让次数+1，否则让次数=1
+    // for(var i = 0; i < str.length; i++) {
+    //   if(str[i] in obj) {
+    //     obj[str[i]]++;
+    //   }else {
+    //     obj[str[i]]= 1;
+    //   }
+    // }
+    // console.log(obj);
+    // var max = str[0];
+    // var length = 0;
+    // for(var k in obj) {
+    //   if(length < obj[k]){
+    //     length = obj[k];
+    //     max = k;
+    //   }
+    // }
+    // console.log(max, length);
+
+    //核心思路：正则替换
+    // 记录字符串的长度  字符串替换，把a替换成""   得到新的字符串，长度小于以前的长度
+    // a以及a的次数
+
+    //d 以及 d出现的次数
+    //直到这个字符串变成""
+    var str = "adadfdfseffserfefsefseeffffftsdg";
+    var max;//最多次数的字符
+    var length = 0;//出现的次数
+    while(str != '') {
+      var first = str[0];//获取字符串的首字符
+      var oldLength = str.length;//替换前的长度
+      var reg = new RegExp(first, "g");
+      str = str.replace(reg, "");//把字符串中所有的a换成""
+      var newLength = str.length;//替换后的长度
+      
+      if(length < oldLength - newLength) {
+        length = oldLength - newLength;
+        max = first;
+      }
+    }
+    console.log(max, length);
+
+
+  </script>
+</body>
+
+</html>

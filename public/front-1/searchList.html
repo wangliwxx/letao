@@ -68,7 +68,7 @@
           <!-- 商品 -->
           <div class="lt_product">
             <!-- 挖个坑 -->
-            <div class="loading"></div>
+            <!-- <div class="loading"></div> -->
           </div>
         </div>
       </div>
@@ -107,8 +107,14 @@
 
   <script type="text/html" id="tpl">
     {{each data v i}}
-    <a href="#">
+    <a href="product.html?productId={{v.id}}">
+      <!-- v.pic结果会是一个空的数组 -->
+      {{if v.pic.length === 0}}
+      <img src="images/none.png" alt="">
+      {{else}}
       <img src="{{v.pic[0].picAddr}}" alt="">
+      {{/if}}
+      
       <p class="mui-ellipsis-2 proName">{{v.num}}--{{v.proName}}</p>
       <p>
         <span class="price">&yen;{{v.price}}</span>

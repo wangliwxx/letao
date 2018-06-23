@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+
+    
+    //1. 只是会用，不会封装
+
+
+    //回调函数： 在js可以把一个函数当成参数，那么这个当成参数的函数就叫做回调函数
+    // function f(fn) {
+    //   console.log("窗前明月光");
+    //   fn();//疑是地上霜  地上鞋两双
+    // }
+
+    // f(function(){
+    //   console.log("地上鞋两双");
+    // });
+
+
+    // f(function(){
+    //   console.log("疑是地上霜");
+    // });
+
+    //var arr = [1, 4, 7, 9, 3, 6, 10];
+    var arr = ["abc", "ab", "aaaaa", "a"];
+    // var arr = [
+    //   {name:"zs", age:18, score:100},
+    //   {name:"zs", age:8, score:10},
+    //   {name:"zs", age:88, score:90},
+    //   {name:"zs", age:38, score:20}
+    // ];
+    // arr.sort(function(a,b) {
+    //   return a.length - b.length;
+    // });
+    // console.log(arr);
+
+    function sort(arr, fn) {
+      for (var i = 0; i < arr.length - 1; i++) {
+        for (var j = 0; j < arr.length - 1 - i; j++) {
+          if (fn(arr[j], arr[j+1]) > 0) {
+            var temp = arr[j];
+            arr[j] = arr[j + 1];
+            arr[j + 1] = temp;
+          }
+        }
+      }
+    }
+
+    
+    sort(arr, function(a, b){
+      return a.length - b.length;
+    });
+    console.log(arr);
+
+  </script>
+
+</body>
+
+</html>
