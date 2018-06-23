@@ -51,27 +51,7 @@ $(function () {
 
 
 
-  //--封装函数--用于获取地址栏中的参数--------------
-  function getSearch() {
-    //获取地址栏的参数
-    var search = location.search;
-    //2. 地址栏会对中文进行转码
-    search = decodeURI(search);
-    //3.去掉问号
-    search = search.slice(1);
-    //4.去掉&，放进数组里
-    var arr = search.split("&")
-    //5.遍历数组，转换成对象
-    var obj = {};
-    arr.forEach(function (e, i) {
-      // console.log(e)
-      var k = e.split("=")[0];
-      var v = e.split("=")[1];
-      obj[k] = v;
-
-    })
-    return obj;
-  }
+ 
   // -----发送ajax请求，获取搜索到商品数据-------------------------
   function render() {
     $(".lt_product").html('<div class="loading"></div>');
