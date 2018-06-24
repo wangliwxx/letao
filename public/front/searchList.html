@@ -105,7 +105,7 @@
   <!-- 准备模板 -->
   <script type="text/html" id="tpl">
     {{each data v i}}
-    <a href="#">
+    <a href="product.html?productId={{v.id}}">
         <img src="{{v.pic[0].picAddr}}" alt="">
         <p class="mui-ellipsis-2 proName">{{v.proName}}</p>
         <p>
@@ -125,4 +125,5 @@
   <script src="js/common.js"></script>
   <script src="js/searchList.js"></script>
 </body>
-</html> 
+
+</html>
