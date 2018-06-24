@@ -35,7 +35,7 @@
             <span class="glyphicon glyphicon-list"></span>
             分类管理
           </a>
-          <div class="child"  style="display: block">
+          <div class="child" style="display: block">
             <a href="first.html">一级分类</a>
             <a href="second.html">二级分类</a>
           </div>
@@ -71,32 +71,41 @@
       </ol>
 
       <!--内容区域-->
-      <div class="lt_content">2222</div>
+      <div class="lt_content">
+        <div class="pic_left pull-left">
+          <!-- 柱状图-插件ECharts -->
+        </div>
+        <div class="pic_right pull-right">
+          <!-- 饼状图-插件ECharts -->
+        </div>
+      </div>
 
     </div>
   </div>
 
-    <!-- 退出模态框 -->
-    <div class="modal fade" tabindex="-1" id="logoutModal">
-        <div class="modal-dialog modal-sm" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title">温馨提示</h4>
-            </div>
-            <div class="modal-body">
-              <p class="text-danger">
-                <span class="glyphicon glyphicon-info-sign"></span>
-                您确定要退出后台管理系统吗？
-              </p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-              <button type="button" class="btn btn-primary btn_logout">确定</button>
-            </div>
-          </div>
+  <!-- 退出模态框 -->
+  <div class="modal fade" tabindex="-1" id="logoutModal">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title">温馨提示</h4>
+        </div>
+        <div class="modal-body">
+          <p class="text-danger">
+            <span class="glyphicon glyphicon-info-sign"></span>
+            您确定要退出后台管理系统吗？
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-primary btn_logout">确定</button>
         </div>
       </div>
+    </div>
+  </div>
 
 
 
@@ -105,7 +114,9 @@
   <script src="lib/bootstrap/js/bootstrap.js"></script>
   <script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
   <script src="lib/nprogress/nprogress.js"></script>
+  <script src="lib/echarts/echarts.min.js"></script>
   <script src="js/common.js"></script>
+  <script src="js/index.js"></script>
 </body>
 
 </html>

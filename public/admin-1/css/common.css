@@ -38,10 +38,11 @@ a:active {
   width: 180px;
   height: 100%;
   background-color: #222d32;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   transition: all 1s;
+  z-index: 999;
 }
 
 .lt_aside.now {
@@ -109,9 +110,22 @@ a:active {
   height: 50px;
   line-height: 50px;
   background-color: #3c8dbc;
-  padding: 0 20px;
+  padding: 0 20px 0 200px;
   font-size: 16px;
   margin-bottom: 15px;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  transition: all 1s;
+}
+
+.lt_main .header.now {
+  padding-left: 20px;
+}
+
+.breadcrumb {
+  margin-top: 60px;
 }
 
 .breadcrumb a {
@@ -123,4 +137,11 @@ a:active {
 .table.table-bordered td {
   text-align: center;
   vertical-align: middle;
+}
+
+
+.charts_left,
+.charts_right {
+  width: 45%;
+  height: 400px;
 }

@@ -8,7 +8,7 @@
 //发送ajax请求获取数据，动态渲染数据
 $(function () {
   var page = 1;
-  var pageSize = 8;
+  var pageSize = 15;
   function render() {
     $.ajax({
       type: "get",

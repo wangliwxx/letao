@@ -7,6 +7,8 @@ $(function () {
   var key = getSearch().key;
   $(".lt_search input").val(key);
 
+
+
   //初始化下拉刷新与上拉加载
   //1. 页面一加载，需要下拉刷新一次
   mui.init({
@@ -20,7 +22,6 @@ $(function () {
           render(function (info) {
             //假设获取数据需要1s
             $(".lt_product").html(template("tpl", info));
-            //结束下拉刷新
             mui(".mui-scroll-wrapper").pullRefresh().endPulldownToRefresh();
             //重置上拉加载
             mui(".mui-scroll-wrapper").pullRefresh().refresh(true);
@@ -71,7 +72,6 @@ $(function () {
     //手动下拉刷新
     mui(".mui-scroll-wrapper").pullRefresh().pulldownLoading();
   });
-  
 
   function render(callback) {
     var obj = {};
